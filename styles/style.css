@@ -1,0 +1,77 @@
+* {
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    transition: color 0.1s ease-in;
+}
+
+a:hover {
+    color: #d4eef5;
+}
+
+body {
+    background-color: rgb(236, 236, 236);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.container {
+    max-width: 80vw;
+    min-height: 100vh;
+    margin: 0 auto;
+    display: flex;
+}
+
+.genwindow {
+    margin: auto;
+}
+
+.label {
+    color: rgb(50, 98, 255);
+    font-size: 4rem;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 1vh;
+}
+.slogan {
+    font-weight: 400;
+    text-align: center;
+    font-style: italic;
+}
+
+.generator {
+    text-align: center;
+    padding: 30px;
+    display: flex;
+    justify-content: space-evenly;
+}
+.passw_area {
+    resize: none;
+    border-radius: 10px;
+    font-size: 1.5rem;
+}
+
+.set {
+    margin-top: 1.5vh;
+    list-style: none;
+    text-align: center;
+}
+ul:first-child {
+    content: none;
+    padding: 0;
+}
+
+
+
+.genbutton {
+    border-radius: 10px; 
+    background-color: rgb(50, 98, 255);
+    border: none;
+    color: #fff;
+} 
+.genbutton:hover, input:hover {
+    cursor: pointer;
+}
+.genbutton:hover {
+    background-color: rgb(68, 112, 255);
+}

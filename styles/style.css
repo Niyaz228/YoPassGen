@@ -29,12 +29,10 @@ main {
 }
 
 .label {
-    color: rgb(50, 98, 255);
     font-size: 4rem;
-    font-weight: 800;
+    font-weight: 900;
     text-align: center;
-    margin-bottom: 1vh;
-    margin-top: 0;
+    margin: 2vh 0 1vh 0;
 }
 .slogan {
     font-weight: 400;
@@ -55,11 +53,23 @@ main {
     background-color: rgba(59, 59, 59, 0.308);
     border-color: #74747438;
     color: white;
-}
-.settings {
-    background-color: rgba(32, 32, 32, 0.144);
+    font-family: 'Courier New', Courier, monospace;
 }
 
+.error {
+    position: absolute;
+    display: none;
+    color: red;
+    font-size: small;
+    padding-left: 30px;    
+    text-decoration: underline;
+}
+
+.settings {
+    background-color: rgba(32, 32, 32, 0.144);
+    margin: 0px 20px;
+    margin-bottom: 2vh;
+}
 .set {
     margin-top: 1.5vh;
     list-style: none;
@@ -89,10 +99,10 @@ ul:first-child {
 
 .copybtn {
     background-color: rgba(226, 226, 226, 0.904);
-    border-radius: 6px;
+    border-radius: 10px;
     border: none;
     background-repeat: no-repeat;
-    padding: 0;
+    margin: 0 .5vw;
 } 
 .copyicon {
     height: 30px;
@@ -108,3 +118,10 @@ ul:first-child {
     width:100%; 
     z-index: -1;
 }
+
+
+.gradient-text {
+    background: linear-gradient(45deg, rgb(40, 126, 255) 33%, rgb(91, 156, 255) 66%, rgb(0, 81, 255));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }

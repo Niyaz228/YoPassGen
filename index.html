@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/style.css">
-    <title>YoPassGen</title>
+    <title>YoPassGen - Password Generator</title>
 </head>
 
 <body>
@@ -18,16 +18,19 @@
             <div class="genwindow">
 
                 <div class="info">
-                    <h1 class="label">
-                        Password Generator
-                    </h1>
+                    <a href="https://github.com/Niyaz228/YoPassGen" target="_blank">
+                        <h1 class="label gradient-text">
+                            Password Generator
+                        </h1>
+                    </a>
+                    
                     <p class="slogan">
-                        Minimalistic tool to make <strong style="color: rgb(3, 180, 3);">strong</strong> passwords.
+                        YoPassGen - minimalistic tool to make <strong style="color: rgb(3, 180, 3);">strong</strong> passwords.
                     </p>
                 </div>
 
                 <div class="generator">
-                    <textarea id="myTextarea" class="passw_area" cols="41" rows="1"></textarea>
+                    <textarea id="myTextarea" class="passw_area" cols="32" rows="1"></textarea>
                     
                     <button class="copybtn" onclick="copy()">
                         <img class="copyicon" src="images/copy.png" alt="copy">
@@ -36,6 +39,10 @@
                     <button class="genbutton" onclick="pasteNewPassword()">
                         Generate
                     </button>
+                </div>
+
+                <div class="error" id="error">
+                    Error: check at least one box.
                 </div>
 
                 <p style="font-size: large; text-align: center; color: #fff;">Settings:</p>
@@ -54,7 +61,10 @@
                         <p style="text-align:center; margin-top: 2.5vh; color: #fff;">Include:</p> 
 
                         <li class="set">
-                            <input id="letters" type="checkbox" checked> Letters
+                            <input id="upper" type="checkbox" checked> Uppercase
+                        </li>
+                        <li class="set">
+                            <input id="lower" type="checkbox" checked> Lowercase
                         </li>
                         <li class="set">
                              <input class="numbers" id="numbers" type="checkbox" checked> Numbers              

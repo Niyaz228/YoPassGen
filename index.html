@@ -28,13 +28,17 @@
 
                 <div class="generator">
                     <textarea id="myTextarea" class="passw_area" cols="41" rows="1"></textarea>
+                    
+                    <button class="copybtn" onclick="copy()">
+                        <img class="copyicon" src="images/copy.png" alt="copy">
+                    </button>
+
                     <button class="genbutton" onclick="pasteNewPassword()">
                         Generate
                     </button>
-    
                 </div>
-                
-                <p style="font-size: large; text-align: center;">Settings:</p>
+
+                <p style="font-size: large; text-align: center; color: #fff;">Settings:</p>
                 <div class="settings" style="border: 1px solid rgba(128, 128, 128, 0.226); border-radius: 20px;">
                     
                     <ul>
@@ -47,7 +51,7 @@
                             </form>
                                 
                         </li>
-                        <p style="text-align:center; margin-top: 2.5vh;">Include:</p> 
+                        <p style="text-align:center; margin-top: 2.5vh; color: #fff;">Include:</p> 
 
                         <li class="set">
                             <input id="letters" type="checkbox" checked> Letters
@@ -68,6 +72,8 @@
         </div>
     </main>
 
+    <canvas id="canvas"></canvas>
+    <script src="scripts/particle.js"></script>
     <script src="scripts/gen.js"></script>
 </body>
 

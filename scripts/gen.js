@@ -26,5 +26,12 @@ function pasteNewPassword(){
     document.getElementById('myTextarea').value = generatePassword();
 } 
 
-pasteNewPassword(); //when page loads
+function copy() {
+  var copyText = document.getElementById("myTextarea");
 
+  copyText.select(); 
+
+  document.execCommand("copy");
+}
+
+pasteNewPassword(); //when page loads

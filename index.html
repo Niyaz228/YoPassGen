@@ -7,27 +7,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/style.css">
-    <title>YoPassGen</title>
+    <title>YoPassGen - Password Generator</title>
 </head>
 
 <body>
-
     <main>
+        <p class="version">v2.2</p>
+
         <div class="container">
 
             <div class="genwindow">
 
                 <div class="info">
-                    <h1 class="label">
-                        Password Generator
-                    </h1>
+                    <a href="https://github.com/Niyaz228/YoPassGen" target="_blank">
+                        <h1 class="label gradient-text">
+                            Password Generator
+                        </h1>
+                    </a>
+                    
                     <p class="slogan">
-                        Minimalistic tool to make <strong style="color: rgb(3, 180, 3);">strong</strong> passwords.
+                        <span class="gradient-text2">YoPassGen</span> - minimalistic tool to make <strong style="color: rgb(3, 180, 3);">strong</strong> passwords.
                     </p>
                 </div>
 
                 <div class="generator">
-                    <textarea id="myTextarea" class="passw_area" cols="41" rows="1"></textarea>
+                    <textarea id="myTextarea" class="passw_area" cols="32" rows="1" readonly></textarea>
                     
                     <button class="copybtn" onclick="copy()">
                         <img class="copyicon" src="images/copy.png" alt="copy">
@@ -38,12 +42,16 @@
                     </button>
                 </div>
 
+                <div class="error" id="error">
+                    Error: check at least one box.
+                </div>
+
                 <p style="font-size: large; text-align: center; color: #fff;">Settings:</p>
                 <div class="settings" style="border: 1px solid rgba(128, 128, 128, 0.226); border-radius: 20px;">
                     
                     <ul>
                         <li class="Length set">
-                            <p>Lenght of the password</p>
+                            <p>Length of the password:</p>
 
                             <form onsubmit="return false" oninput="level.value = flevel.valueAsNumber">
                                 <input name="flevel" id="flying" type="range" min="4" max="32" value="16">
@@ -54,13 +62,16 @@
                         <p style="text-align:center; margin-top: 2.5vh; color: #fff;">Include:</p> 
 
                         <li class="set">
-                            <input id="letters" type="checkbox" checked> Letters
+                            <input id="lower" type="checkbox" checked> Lowercase(a-z)
                         </li>
                         <li class="set">
-                             <input class="numbers" id="numbers" type="checkbox" checked> Numbers              
+                            <input id="upper" type="checkbox" checked> Uppercase(A-Z)
                         </li>
                         <li class="set">
-                            <input id="symbols" type="checkbox"> Symbols
+                             <input class="numbers" id="numbers" type="checkbox" checked> Numbers(0-9)            
+                        </li>
+                        <li class="set">
+                            <input id="symbols" type="checkbox"> Symbols(!@#$...)
                         </li>
     
                     </ul>

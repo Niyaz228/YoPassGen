@@ -11,8 +11,9 @@
 </head>
 
 <body>
-
     <main>
+        <p class="version">v2.3</p>
+
         <div class="container">
 
             <div class="genwindow">
@@ -25,18 +26,18 @@
                     </a>
                     
                     <p class="slogan">
-                        YoPassGen - minimalistic tool to make <strong style="color: rgb(3, 180, 3);">strong</strong> passwords.
+                        <span class="gradient-text2">YoPassGen</span> - minimalistic tool to make <strong style="color: rgb(3, 180, 3);">strong</strong> passwords.
                     </p>
                 </div>
 
                 <div class="generator">
-                    <textarea id="myTextarea" class="passw_area" cols="32" rows="1"></textarea>
+                    <textarea id="myTextarea" class="passw_area" cols="32" rows="1" readonly></textarea>
                     
-                    <button class="copybtn" onclick="copy()">
+                    <button class="copybtn" id="copybtn">
                         <img class="copyicon" src="images/copy.png" alt="copy">
                     </button>
 
-                    <button class="genbutton" onclick="pasteNewPassword()">
+                    <button class="genbutton" id="genbtn">
                         Generate
                     </button>
                 </div>
@@ -49,28 +50,42 @@
                 <div class="settings" style="border: 1px solid rgba(128, 128, 128, 0.226); border-radius: 20px;">
                     
                     <ul>
+                        <li class="set">
+
+                            <p>Type of generation</p>
+                            <input type="radio" name="gentype" id="gentype_s"><label style="margin-right: 15px;"> Strict </label>
+                            <input type="radio" name="gentype" id="gentype_ns" checked><label> Not strict </label>
+                            <script>
+                                gentype_s.onclick = function (){
+                                    document.getElementById("headofincsec").innerText = "Must include:";
+                                }
+                                gentype_ns.onclick = function (){
+                                    document.getElementById("headofincsec").innerText = "May include:";
+                                }
+                            </script>
+
+                        </li>
                         <li class="Length set">
-                            <p>Lenght of the password</p>
+                            <p>Length of the password</p>
 
                             <form onsubmit="return false" oninput="level.value = flevel.valueAsNumber">
                                 <input name="flevel" id="flying" type="range" min="4" max="32" value="16">
                                 <output for="flying" name="level" style="display: block;"> 16 </output>
                             </form>
-                                
                         </li>
-                        <p style="text-align:center; margin-top: 2.5vh; color: #fff;">Include:</p> 
+                        <p id="headofincsec" style="text-align:center; color: #fff;">May include:</p> 
 
                         <li class="set">
-                            <input id="upper" type="checkbox" checked> Uppercase
+                            <input id="lower" type="checkbox" checked> Lowercase(a-z)
                         </li>
                         <li class="set">
-                            <input id="lower" type="checkbox" checked> Lowercase
+                            <input id="upper" type="checkbox" checked> Uppercase(A-Z)
                         </li>
                         <li class="set">
-                             <input class="numbers" id="numbers" type="checkbox" checked> Numbers              
+                             <input class="numbers" id="numbers" type="checkbox" checked> Numbers(0-9)            
                         </li>
                         <li class="set">
-                            <input id="symbols" type="checkbox"> Symbols
+                            <input id="symbols" type="checkbox"> Symbols(!@#$...)
                         </li>
     
                     </ul>
